@@ -1,0 +1,19 @@
+version: "3"
+services:
+  main:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:80"
+    volumes:
+      - ./main:/usr/share/nginx/html
+
+  alternative:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8081:80"
+    volumes:
+      - ./alternative:/usr/share/nginx/html
